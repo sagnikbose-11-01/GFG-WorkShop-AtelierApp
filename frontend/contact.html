@@ -1,0 +1,150 @@
+<!-- static/contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | The Atelier</title>
+    <meta name="description" content="Get in touch with The Atelier. Book an appointment or inquire about our collections.">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+    <!-- Global Liquid Cursor -->
+    <div class="liquid-cursor-wrapper">
+        <svg style="display: none;">
+            <defs>
+                <filter id="liquid-cursor-filter">
+                    <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                    <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                    <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                </filter>
+            </defs>
+        </svg>
+        <canvas id="liquid-cursor-canvas"></canvas>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="brand-logo">The Atelier</div>
+        <ul class="nav-links">
+            <li><a href="/">Shop</a></li>
+            <li><a href="/about">Heritage</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+            <button class="theme-toggle" id="theme-toggle" title="Toggle Theme">
+                <svg class="moon-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
+            <button class="cart-icon" id="cart-icon">
+                Cart <span class="cart-count" id="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="close-cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Items dynamically injected here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total</span>
+                <span id="cart-total-amount">$0</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- AI Concierge Widget -->
+    <div class="concierge-widget">
+        <div class="concierge-chat" id="concierge-chat">
+            <div class="chat-header">
+                <span class="chat-title">Digital Concierge</span>
+                <button class="close-chat" id="close-chat">&times;</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="typing-indicator" id="typing-indicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input-field" placeholder="Ask for styling advice...">
+                <button id="send-message-btn">Send</button>
+            </div>
+        </div>
+        <div class="concierge-bubble" id="concierge-bubble">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2ZM20 16H5.17L4 17.17V4H20V16Z" fill="currentColor"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <header class="page-header fade-in">
+        <h1>The Atelier</h1>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="editorial-section container fade-in" style="animation-delay: 0.3s;">
+        <h2 class="section-title" style="margin-bottom: 2rem;">Book an Appointment</h2>
+        <p class="text-center" style="max-width: 600px; margin: 0 auto 4rem auto; color: #666;">
+            Experience our collections in person. Schedule a private consultation with one of our stylists at our flagship boutique.
+        </p>
+
+        <div class="contact-form-container">
+            <form onsubmit="event.preventDefault(); alert('Thank you for your inquiry. Our team will contact you shortly.'); this.reset();">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="inquiry">Nature of Inquiry</label>
+                    <select id="inquiry" class="form-control" required>
+                        <option value="">Select an option...</option>
+                        <option value="appointment">Book an Appointment</option>
+                        <option value="product">Product Information</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" class="form-control" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn-primary" style="width: 100%;">Submit Inquiry</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">The Atelier</div>
+        <div class="footer-links">
+            <a href="/">Shop</a>
+            <a href="/about">Heritage</a>
+            <a href="/contact">Contact</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <p class="copyright">&copy; 2026 The Atelier. All rights reserved.</p>
+    </footer>
+
+    <script src="/static/app.js"></script>
+    <script src="/static/concierge.js"></script>
+    <script src="/static/liquid-cursor.js"></script>
+</body>
+</html>
