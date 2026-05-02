@@ -42,7 +42,7 @@ A high-end, multi-page luxury fashion boutique website featuring a sophisticated
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/the-atelier.git
+   git clone https://github.com/sagnikbose-11-01/GFG-WorkShop-AtelierApp.git
    cd the-atelier
    ```
 
