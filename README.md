@@ -2,7 +2,7 @@
 
 A high-end, multi-page luxury fashion boutique website featuring a sophisticated "Quiet Luxury" aesthetic merged with a vibrant, interactive "Liquid Neon" theme. Built with a performant FastAPI backend and a pixel-perfect Vanilla JavaScript frontend.
 
-![Live Site](https://img.shields.io/badge/Live-Site-brightgreen?style=for-the-badge&link=https://atelier-app-817686999586.us-central1.run.app)
+**Live Site:** [https://atelier-app-817686999586.us-central1.run.app/](https://atelier-app-817686999586.us-central1.run.app/)
 
 ## ✨ Features
 
